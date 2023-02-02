@@ -12,14 +12,14 @@ URL_POPULAR = "http://ero.betfair.com/www/sports/exchange/readonly/v1/bymarket?_
 URL_DEMOCRAT = "http://ero.betfair.com/www/sports/exchange/readonly/v1/bymarket?_ak=nzIFcwyWhrlwYMrh&alt=json&currencyCode=EUR&locale=en_GB&marketIds=1.178163685&rollupLimit=10&rollupModel=STAKE&types=MARKET_STATE,MARKET_DESCRIPTION,EVENT,RUNNER_DESCRIPTION,RUNNER_STATE,RUNNER_EXCHANGE_PRICES_BEST"
 URL_REPUBLICAN = "http://ero.betfair.com/www/sports/exchange/readonly/v1/bymarket?_ak=nzIFcwyWhrlwYMrh&alt=json&currencyCode=EUR&locale=en_GB&marketIds=1.178163916&rollupLimit=10&rollupModel=STAKE&types=MARKET_STATE,MARKET_DESCRIPTION,EVENT,RUNNER_DESCRIPTION,RUNNER_STATE,RUNNER_EXCHANGE_PRICES_BEST"
 
-proxy = {"http": '52.30.164.26'}
+
 
 class Fetcher:
     def __init__(self):
         self.list = []
 
-    def scrape(self, url, number_of_items, proxy):
-        response = requests.get(url, proxies=proxy)
+    def scrape(self, url, number_of_items):
+        response = requests.get(url)
         data = response.json()
         self.list = [[data["eventTypes"][0]["eventNodes"][0]["marketNodes"][0]["runners"][i]["description"]["runnerName"], max(float(data["eventTypes"][0]["eventNodes"][0]["marketNodes"][0]["runners"][i]["exchange"]["availableToLay"][0]["price"]), float(data["eventTypes"][0]["eventNodes"][0]["marketNodes"][0]["runners"][i]["exchange"]["availableToBack"][0]["price"]))] for i in range(number_of_items)]
         self.list.sort(key=lambda l: l[1])
@@ -47,16 +47,16 @@ def edit_list4(lista):
 
 
 fetch = Fetcher()
-fetch.scrape(URL_PRESIDENT, 3, proxy)
+fetch.scrape(URL_PRESIDENT, 3)
 #print(edit_list3(fetch.list))
 l_president = edit_list3(fetch.list)
-fetch.scrape(URL_DEMOCRAT, 6, proxy)
+fetch.scrape(URL_DEMOCRAT, 6)
 #print(edit_list4(fetch.list))
 l_democrat = edit_list4(fetch.list)
-fetch.scrape(URL_REPUBLICAN, 6, proxy)
+fetch.scrape(URL_REPUBLICAN, 6)
 #print(edit_list4(fetch.list))
 l_republican = edit_list4(fetch.list)
-fetch.scrape(URL_POPULAR, 3, proxy)
+fetch.scrape(URL_POPULAR, 3)
 #print(edit_list3(fetch.list))
 l_popular = edit_list3(fetch.list)
 
