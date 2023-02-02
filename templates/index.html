@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Who will win the 2024 United States presidential election? Live updates!">
+    <title>Presidential Election 2024</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+            integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+
+<body>
+
+<section id="title">
+
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-xl navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="static/img/US-WhiteHouse-Emblem.svg" alt="Logo" width="30" height="24"
+                     class="d-inline-block align-text-top">
+                ELECTION 2024
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#next-president">Next President</a>
+                    <a class="nav-link" href="#democratic-primaries">D primaries</a>
+                    <a class="nav-link" href="#republican-primaries">R primaries</a>
+                    <a class="nav-link" href="#popular-vote">Popular vote</a>
+                    <a class="nav-link" href="#footer">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Title -->
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-6 main-heading">
+
+                <h1>Who will be the next US President?</h1>
+                <h6>Stay ahead of the game with real-time probabilities and insights based on market data.</h6>
+
+                <h5>Real time updates!</h5>
+
+            </div>
+            <div class="col-lg-6 image-heading">
+
+                <img class="potus-image" src="static/img/potus.png" alt="President Of The United Stats ">
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Presidential -->
+
+<section id="next-president">
+
+    <div class="container-fluid container-white">
+
+        <div class="row">
+            <h1>Next President</h1>
+            <div class="col-lg-6">
+                <img class="candidate-image" src="{{img_list[0]}}" alt="">
+                <h3>{{l_president[0][0]}}</h3>
+                <h2>{{l_president[0][1]}}%</h2>
+            </div>
+
+            <div class="col-lg-6">
+                <img class="candidate-image" src="{{img_list[1]}}" alt="">
+                <h3>{{l_president[1][0]}}</h3>
+                <h2>{{l_president[1][1]}}%</h2>
+            </div>
+
+            <div class="col mobile-drop">
+                <h5>Other/Independent</h5>
+                <h5>{{l_president[2][1]}}%</h5>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- Democrat -->
+
+<section id="democratic-primaries">
+
+    <div class="container-fluid container-democrat">
+
+        <div class="row">
+            <h1>Democratic nominee</h1>
+            <div class="col-lg-6">
+                <img class="candidate-image primaries-image" src="{{img_list[2]}}" alt="">
+                <h3>{{l_democrat[0][0]}}</h3>
+                <h2>{{l_democrat[0][1]}}%</h2>
+            </div>
+
+            <div class="col-lg-6">
+                <img class="candidate-image primaries-image" src="{{img_list[3]}}" alt="">
+                <h3>{{l_democrat[1][0]}}</h3>
+                <h2>{{l_democrat[1][1]}}%</h2>
+            </div>
+
+            <div class="col-lg-6">
+                <img class="candidate-image primaries-image" src="{{img_list[4]}}" alt="">
+                <h3>{{l_democrat[2][0]}}</h3>
+                <h2>{{l_democrat[2][1]}}%</h2>
+            </div>
+
+            <div class="col-lg-6">
+                <img class="candidate-image primaries-image" src="static/img/Democratic Party.png" alt="">
+                <h3>Any Other</h3>
+                <h2>{{l_democrat[3][1]}}%</h2>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- Republican -->
+
+<section id="republican-primaries">
+
+    <div class="container-fluid container-republican">
+
+        <div class="row">
+            <h1>Republican nominee</h1>
+            <div class="col-lg-6">
+                <img class="candidate-image primaries-image" src="{{img_list[5]}}" alt="">
+                <h3>{{l_republican[0][0]}}</h3>
+                <h2>{{l_republican[0][1]}}%</h2>
+            </div>
+
+            <div class="col-lg-6">
+                <img class="candidate-image primaries-image" src="{{img_list[6]}}" alt="">
+                <h3>{{l_republican[1][0]}}</h3>
+                <h2>{{l_republican[1][1]}}%</h2>
+            </div>
+
+            <div class="col-lg-6">
+                <img class="candidate-image primaries-image" src="{{img_list[7]}}" alt="">
+                <h3>{{l_republican[2][0]}}</h3>
+                <h2>{{l_republican[2][1]}}%</h2>
+            </div>
+
+            <div class="col-lg-6">
+                <img class="candidate-image primaries-image" src="static/img/Republican Party.png" alt="">
+                <h3>Any Other</h3>
+                <h2>{{l_republican[3][1]}}%</h2>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<!-- Popular vote -->
+
+<section id="popular-vote">
+
+    <div class="container-fluid container-white">
+
+        <div class="row">
+            <h1>Popular vote</h1>
+            <div class="col-lg-6">
+                <img class="candidate-image" src="{{img_list[8]}}" alt="">
+                <h3>{{l_popular[0][0]}}</h3>
+                <h2>{{l_popular[0][1]}}%</h2>
+            </div>
+
+            <div class="col-lg-6">
+                <img class="candidate-image" src="{{img_list[9]}}" alt="">
+                <h3>{{l_popular[1][0]}}</h3>
+                <h2>{{l_popular[1][1]}}%</h2>
+            </div>
+
+            <div class="col mobile-drop">
+                <h5>Other/Independent</h5>
+                <h5>{{l_popular[2][1]}}%</h5>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<footer id="footer">
+    <a href="mailto:mario.haric.02@gmail.com"><i class="bi bi-envelope-fill"></i></a>
+
+</footer>
+
+</body>
+
+</html>
